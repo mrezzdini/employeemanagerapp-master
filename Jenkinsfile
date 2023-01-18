@@ -8,7 +8,7 @@ pipeline {
             agent any
             steps{
                 //Changez avec votre lien github
-                git branch: 'main', url: 'https://github.com/mrezzdini/employeemanagerapp-master.git'
+                git branch: 'master', url: 'https://github.com/mrezzdini/employeemanagerapp-master.git'
             }
         }
         stage('Init'){
