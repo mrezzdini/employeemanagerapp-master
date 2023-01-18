@@ -23,11 +23,11 @@ pipeline {
             agent any
 
             steps {
-                dir('employeemanagerapp-master'){
+                
                     sh 'docker build -t mrezzdini/empman:$BUILD_ID .'
                     sh 'docker push mrezzdini/empman:$BUILD_ID'
                     sh 'docker rmi mrezzdini/empman:$BUILD_ID'
-                }
+                
             }
         }
         
