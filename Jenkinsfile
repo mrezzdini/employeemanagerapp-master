@@ -8,7 +8,7 @@ pipeline {
             agent any
             steps{
                 //Changez avec votre lien github
-                git branch: 'main', url: 'https://github.com/mrezzdini/employeemanagerapp-master.git'
+                git branch: 'master', url: 'https://github.com/mrezzdini/employeemanagerapp-master.git'
             }
         }
         stage('Init'){
@@ -23,7 +23,7 @@ pipeline {
             agent any
 
             steps {
-                dir('paper-kit-2-angular-master'){
+                dir('employeemanagerapp-master'){
                     sh 'docker build -t mrezzdini/empman:$BUILD_ID .'
                     sh 'docker push mrezzdini/empman:$BUILD_ID'
                     sh 'docker rmi mrezzdini/empman:$BUILD_ID'
