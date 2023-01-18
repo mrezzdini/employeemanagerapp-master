@@ -26,7 +26,7 @@ pipeline {
                 
                     sh 'docker build -t mrezzdini/empman:$BUILD_ID .'
                     sh 'docker push mrezzdini/empman:$BUILD_ID'
-                    sh 'docker rmi mrezzdini/empman:$BUILD_ID'
+                    
                 
             }
         }
@@ -35,6 +35,7 @@ pipeline {
         stage('Logout'){
             agent any
             steps{
+              sh 'docker rmi mrezzdini/empman:$BUILD_ID'
                 sh 'docker logout'
             }
         }
