@@ -1,5 +1,5 @@
 # stage 1
-FROM node:latest as build
+FROM node:latest as node
 WORKDIR /app
 COPY . .
 RUN npm install --save --legacy-peer-deps
